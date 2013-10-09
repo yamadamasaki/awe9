@@ -44,6 +44,9 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+
+	// custom repositories
+	mavenRepo 'http://repo.spring.io/milestone' // for spring-security-core:2.0-RC2
     }
 
     dependencies {
@@ -71,6 +74,7 @@ grails.project.dependency.resolution = {
 
 	// custom installed plugins
 	compile ":mongodb:1.3.0"
+	compile ':spring-security-core:2.0-RC2'
     }
 }
 
