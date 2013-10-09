@@ -70,3 +70,6 @@ grails.project.dependency.resolution = {
         //runtime ":yui-minify-resources:0.1.5"
     }
 }
+
+// custome property settings
+grails.reload.enabled = true
