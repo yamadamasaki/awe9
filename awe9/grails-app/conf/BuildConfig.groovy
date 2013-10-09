@@ -73,3 +73,6 @@ grails.project.dependency.resolution = {
 	compile ":mongodb:1.3.0"
     }
 }
+
+// custome property settings
+grails.reload.enabled = true
