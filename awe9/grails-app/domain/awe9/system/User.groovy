@@ -1,5 +1,10 @@
 package awe9.system
 
+import groovy.transform.ToString
+import groovy.transform.EqualsAndHashCode
+
+@ToString(includes=['username'])
+@EqualsAndHashCode(excludes=['springSecurityService'])
 class User {
 
 	transient springSecurityService
