@@ -60,6 +60,12 @@ class UserController {
         respond userInstance
     }
 
+    private Collection minus(Collection c1, Collection c2) {
+        c1 = c1.clone()
+        c1.removeAll(c2 as Object[])
+        c1
+    }
+
     @Transactional
     def update(User userInstance) {
         if (userInstance == null) {
@@ -73,6 +79,13 @@ class UserController {
         }
 
         userInstance.save flush:true
+
+        // UserAuthority
+        def oldAuthorities = UserAuthority.findAllByUser(userInstance)*.authority
+        def newAuthorities = singletonToCollection(params.userAuthorities).collect { Authority.findByAuthority(it) }
+        minus(newAuthorities, oldAuthorities).each { UserAuthority.create(userInstance, it, true) }
+        minus(oldAuthorities, newAuthorities).each { UserAuthority.remove(userInstance, it, true) }
+        // UserAuthority
 
         request.withFormat {
             form {
