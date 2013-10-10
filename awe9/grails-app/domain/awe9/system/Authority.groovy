@@ -1,19 +1,19 @@
 package awe9.system
 
-import groovy.transform.ToString
 import groovy.transform.EqualsAndHashCode
 
-@ToString
 @EqualsAndHashCode
 class Authority {
 
-	String authority
+    String authority
 
-	static mapping = {
-		cache true
-	}
+    String toString() { authority }
 
-	static constraints = {
-		authority blank: false, unique: true
-	}
+    static mapping = {
+	cache true
+    }
+
+    static constraints = {
+	authority blank: false, unique: true
+    }
 }
