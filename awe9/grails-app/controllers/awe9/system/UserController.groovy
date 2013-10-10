@@ -1,7 +1,5 @@
 package awe9.system
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
@@ -25,6 +23,10 @@ class UserController {
         respond new User(params)
     }
 
+    private singletonToCollection(param) {
+        String.isCase(param) ? [param] as String[] : param
+    }
+
     @Transactional
     def save(User userInstance) {
         if (userInstance == null) {
@@ -38,6 +40,12 @@ class UserController {
         }
 
         userInstance.save flush:true
+
+	// UserAuthority
+	singletonToCollection(params.userAuthorities).each {
+	    new UserAuthority(user:userInstance, authority:Authority.findByAuthority(it)).save(flush:true)
+	}
+	// UserAuthority
 
         request.withFormat {
             form {
