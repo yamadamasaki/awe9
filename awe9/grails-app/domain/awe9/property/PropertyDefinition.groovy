@@ -21,6 +21,8 @@ class PropertyDefinition {
     static embedded = ['entries']
 
     static constraints = {
+        name()
+        entries()
     	description nullable:true
     }
 

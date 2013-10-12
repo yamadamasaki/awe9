@@ -10,8 +10,6 @@ class PropertyDefinitionEntry {
 
     static mapWith = "mongo"
 
-    ObjectId id
-
     String name
     String type
     //Boolean multiplicity = false
@@ -21,6 +19,8 @@ class PropertyDefinitionEntry {
     String description
 
     static constraints = {
+        name()
+        type()
     	description nullable:true
     }
 
