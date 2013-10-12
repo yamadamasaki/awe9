@@ -24,4 +24,18 @@ class PropertyDefinitionSpec extends Specification {
     PropertyDefinition.findByName('書誌情報').entries.find { it.name == '出版日'}
     }
 
+    void "属性を定義する (define版)"() {
+    given:
+    when:
+    PropertyDefinition.define(
+        '書誌情報',
+        [[name:'タイトル', type:'String', description:'本の題名を表す'],
+         [name:'出版日', type:'Date', description:'本が出版された日']],
+        "本の情報を表すものです"
+    )
+    then:
+    PropertyDefinition.findByName('書誌情報').entries.size() == 2
+    PropertyDefinition.findByName('書誌情報').entries.find { it.name == '出版日'}
+    }
+
 }

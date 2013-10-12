@@ -15,14 +15,21 @@ class PropertyDefinition {
     String name
     Set entries
 
+    String description
+
     static hasMany = [entries:PropertyDefinitionEntry]
     static embedded = ['entries']
 
     static constraints = {
+    	description nullable:true
     }
 
     static PropertyDefinition define(String name, List entries) {
-    	def pd = new PropertyDefinition(name:name)
+        define(name, entries, "")
+    }
+
+    static PropertyDefinition define(String name, List entries, String description) {
+    	def pd = new PropertyDefinition(name:name, description:description)
     	entries.each {
 	    pd.addToEntries(PropertyDefinitionEntry.define(it))
     	}
