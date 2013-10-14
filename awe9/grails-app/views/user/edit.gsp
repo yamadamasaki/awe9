@@ -1,5 +1,3 @@
-<%@ page import="awe9.system.User" %>
-<%@ page import="awe9.system.Authority" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,13 +30,6 @@
 	<g:hiddenField name="version" value="${userInstance?.version}" />
 	<fieldset class="form">
 	  <g:render template="form"/>
-	  <div class="fieldcontain">
-    	    <label for="userAuthorities">
-              <g:message code="user.authorities.label" default="Authorities" />
-    	    </label>
-    	    <g:select name="userAuthorities" from="${Authority.all*.authority}" value="${userInstance?.authorities*.authority}" multiple="true" />
-	  </div>
-
 	</fieldset>
 	<fieldset class="buttons">
 	  <g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
