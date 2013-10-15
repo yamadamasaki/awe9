@@ -1,4 +1,3 @@
-<%@ page import="awe9.system.Authority" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,12 +28,6 @@
       <g:form url="[resource:userInstance, action:'save']" >
 	<fieldset class="form">
 	  <g:render template="form"/>
-	  <div class="fieldcontain">
-    	    <label for="userAuthorities">
-	      <g:message code="user.authorities.label" default="Authorities" />
-    	    </label>
-    	    <g:select name="userAuthorities" from="${Authority.all*.authority}" multiple="true" />
-	  </div>
 	</fieldset>
 	<fieldset class="buttons">
           <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
