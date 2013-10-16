@@ -15,6 +15,11 @@ class PersonSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
+    void "典型的なインスタンスを生成する"() {
+    when:
+    new Person(name:"山田正樹").save(flush:true)
+    then:
+    Person.count() == 1
+    Person.findByName("山田正樹")
     }
 }

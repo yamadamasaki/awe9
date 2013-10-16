@@ -42,4 +42,19 @@ class PropertyDefinitionSpec extends Specification {
     PropertyDefinition.findByName('書誌情報').entries.find { it.name == '出版日'}
     }
 
+    static definePropertyDefinitionExample() {
+        PropertyDefinition.define(
+            "属性定義1",
+            [[name:"名前", type:"String"],
+             [name:"日付", type:"Date", description:"その日"],
+             [name:"値", type:"Integer"]],
+            "コメント")
+        PropertyDefinition.define(
+            "属性定義2",
+            [[name:"文字列", type:"String"],
+             [name:"開始日", type:"Date"],
+             [name:"人数", type:"Integer"]],
+            "コメント")
+    }
+
 }
