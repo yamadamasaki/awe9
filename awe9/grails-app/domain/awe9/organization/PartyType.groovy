@@ -11,17 +11,16 @@ class PartyType {
 
     static mapWith = "mongo"
 
-    static hasMany = [propertyDefinitions:PropertyDefinition]
-
     ObjectId id
 
     String name
-
     String description
+
+    static hasMany = [propertyDefinitions:PropertyDefinition]
 
     static constraints = {
         name()
-        description()
-        propertyDefinitions()
+        description nullable:true
+        propertyDefinitions nullable:true
     }
 }
