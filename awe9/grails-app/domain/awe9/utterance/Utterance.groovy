@@ -19,7 +19,7 @@ class Utterance {
 
     UtteranceType type
 
-    static hasMany = [contexts:Context, anteriors:Utterance, posteriors:Utterance]
+    static hasMany = [contexts:Context]
     static embedded = ['contexts']
 
     static constraints = {
@@ -27,7 +27,5 @@ class Utterance {
         when()
         content()
         contexts nullable:true
-        anteriors nullable:true
-        posteriors nullable:true
     }
 }
