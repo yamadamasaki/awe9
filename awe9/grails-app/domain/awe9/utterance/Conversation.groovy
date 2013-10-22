@@ -3,6 +3,7 @@ package awe9.utterance
 import org.bson.types.ObjectId
 import groovy.transform.ToString
 import groovy.transform.EqualsAndHashCode
+import awe9.type.Type
 
 @ToString
 @EqualsAndHashCode
@@ -12,7 +13,7 @@ class Conversation {
 
     ObjectId id
 
-    ConversationType type
+    Type type
 
     static hasMany = [utterances:Utterance]
 
