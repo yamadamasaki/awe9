@@ -26,11 +26,13 @@
   - セッション中に意味のある対話が行われた場合, セッション終了時に自発的に記録してください. わたしが「記録して」と言った場合も記録してください
   - これはおもにわたしの記録として必要なものです
   - claude と gemini で共有されません. それぞれ自分のディレクトリ (claude, gemini) を使用してください
-  - フォーマット: Markdown + YAML frontmatter
-    - frontmatter に date, participants, topic, related (関連文書) を含める
-    - `## Human` / `## Claude` の見出しで発言者を区別する
-    - ファイル名: `YYYY-MM-DD-話題の短い英語名.md`
-    - 発言内容は逐語的に記録する
+  - フォーマット
+    - claude: Markdown + YAML frontmatter (claude からの提案)
+      - frontmatter に date, participants, topic, related (関連文書) を含める
+      - `## Human` / `## Claude` の見出しで発言者を区別する
+      - ファイル名: `YYYY-MM-DD-話題の短い英語名.md`
+    - gemini も Markdown (+ YAML frontmatter) で, 上に倣って, 自分のやりやすいフォーマットを決める
+  - 発言内容は逐語的に記録する
 - {claude,gemini}/summaries
   - わたしとあなたとの間で行われたセッションについて重要な事項をまとめてください. これは, あなたの長期記憶として, あなたが使います. 過去の記憶が必要な場合には, ここを参照して役立ててください. あなたのためのものです
   - セッション中に重要な決定や知見があった場合, セッション終了時に自発的に記録・更新してください. わたしが「記録して」と言った場合も記録してください
