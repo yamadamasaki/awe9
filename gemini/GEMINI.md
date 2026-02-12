@@ -20,3 +20,7 @@ This directory is integral to the Gemini agent's operation within the `awe9` pro
     -   Understand the context and ongoing knowledge base of Gemini by examining `summaries/`.
 
 This structure ensures that Gemini maintains an organized and accessible record of its contributions and learned information, fostering more efficient and informed collaboration within the `awe9` project.
+
+## GitHub Project Identification:
+
+When referring to GitHub Projects, you can generally use the project's **Number** (e.g., `4`) for convenience with CLI commands. However, the project's **ID** (e.g., `PVT_kwHNkD3OATt8Gg`) is a more robust and globally unique identifier. Both can be used to reference a project, but using the Number is often simpler for direct `gh` CLI interactions.
